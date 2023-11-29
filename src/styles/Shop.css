@@ -1,0 +1,23 @@
+.shop {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  min-height: 100vh;
+}
+
+.products {
+  padding-left: 10%;
+  padding-top: 50px;
+  padding-right: 10%;
+  background-color: beige;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* .order {
+  background-color: var(--dim-orange);
+  padding-top: 28px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: sticky;
+} */

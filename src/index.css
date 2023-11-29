@@ -1,0 +1,23 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Lato', sans-serif;
+  --orange: #ff9900;
+  --black: #000;
+  --white: #ffffff;
+  --blue: #1c2b35;
+  --dim-orange: #ffe0b3;
+  --nevy: #1c2b35;
+  --red: #ff3030;
+}
+.container,
+.wraper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
