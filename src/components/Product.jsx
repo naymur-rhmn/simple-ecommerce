@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Product.css';
 
-function Product({ product }) {
+function Product({ product, handleProduct }) {
   const { img, name, ratings, stock, seller, price } = product;
+
   return (
     <div>
       <div className='single-product'>
@@ -16,7 +17,9 @@ function Product({ product }) {
           </div>
         </div>
       </div>
-      <button className='product-btn'>Add to Cart</button>
+      <button onClick={() => handleProduct(product)} className='product-btn'>
+        Add to Cart
+      </button>
     </div>
   );
 }

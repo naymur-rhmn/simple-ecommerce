@@ -15,9 +15,9 @@
 }
 
 /* .order {
+  position: sticky;
   background-color: var(--dim-orange);
   padding-top: 28px;
   padding-left: 16px;
   padding-right: 16px;
-  position: sticky;
 } */

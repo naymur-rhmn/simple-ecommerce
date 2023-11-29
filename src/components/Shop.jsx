@@ -5,6 +5,8 @@ import Order from './Order';
 
 function Shop() {
   const [products, setProducts] = useState([]);
+
+  const [cart, setCart] = useState([]);
   //   load data
   useEffect(() => {
     const URL =
@@ -19,16 +21,29 @@ function Shop() {
     };
     loadData();
   }, []);
-  console.log(products);
+  // add to cart event hander
+  function handleProduct(pd) {
+    let newCart = [...cart, pd];
+    setCart(newCart);
+  }
+  // clear the cart
+  function handleClearCart() {
+    setCart([]);
+  }
+  console.log(cart);
   return (
     <section className='shop'>
       <div className='products'>
         {products.map((product) => (
-          <Product key={product.id} product={product}></Product>
+          <Product
+            key={product.id}
+            handleProduct={handleProduct}
+            product={product}
+          ></Product>
         ))}
       </div>
 
-      <Order></Order>
+      <Order cart={cart} handleClearCart={handleClearCart}></Order>
     </section>
   );
 }
