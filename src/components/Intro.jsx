@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Intro.css';
 import maleFashion from '../assets/male-fashion.png';
+import { Link } from 'react-router-dom';
 
 function Intro() {
   return (
@@ -12,7 +13,9 @@ function Intro() {
           <p className='text-content'>
             Discover all the new arrivals of ready-to-wear collection.
           </p>
-          <button className='shop-btn'>Shop Now</button>
+          <Link to='/shop'>
+            <button className='shop-btn'>Shop Now</button>
+          </Link>
         </div>
         <div className='image'>
           <img src={maleFashion} alt='cover image' />
