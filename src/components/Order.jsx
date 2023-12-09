@@ -32,13 +32,13 @@ function Order({ cart, handleClearCart }) {
       <h2 className='order-title'>Order Summary</h2>
       <ul className='cart-detail'>
         <li>Selected Items: {cart.length}</li>
-        <li>Total Price: {parseFloat(orderInfo.totalPrice?.toFixed(2))}</li>
+        <li>Total Price: ${parseFloat(orderInfo.totalPrice?.toFixed(2))}</li>
         <li>
-          Total Shipping Charge:{' '}
+          Total Shipping Charge: $
           {parseFloat(orderInfo.shippingPrice?.toFixed(2))}
         </li>
-        <li>Tax: {parseFloat(orderInfo.tax?.toFixed(2))}</li>
-        <li>Grand Total: {parseFloat(orderInfo.grandTotal?.toFixed(2))}</li>
+        <li>Tax: ${parseFloat(orderInfo.tax?.toFixed(2))}</li>
+        <li>Grand Total: ${parseFloat(orderInfo.grandTotal?.toFixed(2))}</li>
       </ul>
       <button onClick={handleClearCart} className='clear-btn'>
         Clear Cart

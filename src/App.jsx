@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom';
 import Home from './pages/Home';
 import ErrorPage from './pages/ErrorPage';
+import OrderReview from './pages/OrderReview';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: 'orders',
         element: <Orders />,
+      },
+      {
+        path: 'order-review',
+        element: <OrderReview />,
+        loader: () => {
+          const products = fetch('./products.json').then((res) => res.json());
+          return products;
+        },
       },
     ],
   },

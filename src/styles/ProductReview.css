@@ -1,0 +1,16 @@
+.product-review {
+  display: flex;
+  border: 1px dotted green;
+  padding: 6px;
+}
+.product-img {
+  width: 91px;
+  height: 91px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}

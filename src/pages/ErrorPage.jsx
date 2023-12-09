@@ -14,7 +14,6 @@ function ErrorPage() {
     fontSize: '24px',
   };
   const error = useRouteError();
-  console.log(error);
   return (
     <div style={errorStyle}>
       <h2>{error.status} !</h2>

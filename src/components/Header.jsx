@@ -13,15 +13,25 @@ function Header() {
         <nav>
           <ul className='list-items'>
             <li>
-              <Link to='/'>Home</Link>
+              <Link style={{ color: 'white' }} to='/'>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to='/shop'>Shop</Link>
+              <Link style={{ color: 'white' }} to='/shop'>
+                Shop
+              </Link>
             </li>
             <li>
-              <Link to='/orders'>Orders</Link>
+              <Link style={{ color: 'white' }} to='/orders'>
+                Orders
+              </Link>
             </li>
-            <li>Order Review</li>
+            <li>
+              <Link style={{ color: 'white' }} to='/order-review'>
+                Order Review
+              </Link>
+            </li>
             <li>Manage Inventory</li>
             <li>Login</li>
           </ul>

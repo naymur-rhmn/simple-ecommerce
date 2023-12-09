@@ -1,0 +1,19 @@
+.order-review {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  /* row-gap: 29px; */
+  column-gap: 30px;
+  min-height: 100vh;
+  padding: 5vh 25px;
+  align-items: center;
+}
+
+.orders {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.order-cart {
+  background-color: bisque;
+}

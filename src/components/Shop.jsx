@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Shop.css';
 import Product from './Product';
 import Order from './Order';
-import { json } from 'react-router-dom';
+import { deleteCart, getData, storeData } from '../utilities/manageStorage';
 
 function Shop() {
   const [products, setProducts] = useState([]);
@@ -24,17 +24,13 @@ function Shop() {
     loadData();
   }, []);
 
-  // get data from browser storage
+  // call data from browser storage
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || {};
-    const cartData = Object.keys(storedCart).map((id) => ({
-      id,
-      quantity: storedCart[id],
-    }));
+    const cartData = getData();
     modifyDataUse(cartData);
   }, [products]);
 
-  // use localStorage data
+  // serve storage data
   function modifyDataUse(data) {
     let selectedProducts = [];
     for (const item of data) {
@@ -44,7 +40,6 @@ function Shop() {
           selectedProducts.push(singleItem);
         }
       });
-      // console.log(item);
     }
     setCart(selectedProducts);
   }
@@ -52,7 +47,6 @@ function Shop() {
   // add to cart event hander
   function handleProduct(product) {
     let newCart = [];
-
     const exists = cart.find(
       (singleProduct) => singleProduct.id === product.id
     );
@@ -69,21 +63,13 @@ function Shop() {
     setCart(newCart);
     storeData(newCart);
   }
-  // store data to local storage
-  function storeData(cartData) {
-    const dataToStore = {};
-    for (const data of cartData) {
-      const id = data.id;
-      const quantity = data.quantity;
-      dataToStore[id] = quantity;
-    }
-    localStorage.setItem('cart', JSON.stringify(dataToStore));
-  }
+
   // clear the cart
   function handleClearCart() {
-    localStorage.removeItem('cart');
+    deleteCart();
     setCart([]);
   }
+
   return (
     <section className='shop'>
       <div className='products'>
